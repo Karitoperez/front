@@ -7,15 +7,14 @@ use Illuminate\Support\Facades\Http;
 
 class CreateUserForm extends Component
 {
-    public $users;
+    public $usuarios;
 
     public function mount()
     {
         $response = Http::get('http://localhost:8000/api/usuarios');
 
-        $this->users = $response->json();
+        $this->usuarios = $response->json();
 
-        dd($users);
     }
 
     public function render()

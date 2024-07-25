@@ -1,0 +1,75 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0 0 calc(v.$separacion / 2) 0;
+    color: v.$gris;
+}
+h2 {
+    font-size: 2.4rem;
+}
+h3 {
+    font-size: 2.2rem;
+}
+p {
+    font-size: 1.6rem;
+    color: v.$gris;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+a,
+p,
+label,
+input,
+span,
+button {
+    &::selection {
+        color: #fff;
+        background-color: v.$indigo;
+    }
+}
+
+.tagline {
+    color: v.$blanco;
+    text-align: center;
+}
+
+.descripcion-pagina {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0;
+    margin-bottom: 2rem;
+    color: v.$gris;
+    line-height: 3rem;
+}
+
+.titulo{
+    color: v.$indigo;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 2.8rem;
+}
+
+.subtitulo{
+    font-weight: bold;
+    font-size: 2.2rem;
+    margin: 1rem 0;
+
+    span{
+        font-weight: bold;
+    }
+}
+
+
+a {
+    text-decoration: none;
+}

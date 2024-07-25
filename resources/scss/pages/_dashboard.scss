@@ -1,0 +1,406 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.dashboard {
+    &__categorias {
+        margin: 2rem 0;
+
+        @include m.tablet {
+            display: flex;
+            gap: 2rem;
+        }
+
+        &-lista {
+            padding-bottom: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+
+            @include m.tablet {
+                padding-bottom: 0;
+            }
+
+            li {
+                button {
+                    padding: 0 1rem;
+                    border: 0.1rem solid v.$indigo;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        transform: scale(1.1);
+                        background-color: v.$indigo;
+                        color: v.$blanco;
+                    }
+                }
+            }
+        }
+    }
+
+    &__principal {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .aprendizaje {
+        padding: 1rem;
+        &__titulo {
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+
+        &__cursos {
+        }
+
+        &__curso {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s ease-out;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+
+            &-imagen {
+                img {
+                    object-fit: 2/3;
+                    width: 30rem;
+                    height: 15rem;
+                }
+            }
+
+            &-info {
+            }
+
+            &-nombre {
+                font-weight: bold;
+                font-size: 1.2rem;
+                color: v.$indigo;
+            }
+
+            &-instructor {
+                font-size: 1.2rem;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            &-duracion {
+                font-size: 1.2rem;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            &-fechas {
+                font-size: 1.2rem;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    &__navegacion {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        &-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease-in;
+            color: #1f1f1f;
+            i {
+                color: v.$indigo;
+                font-size: 4rem;
+                transition: all 0.3s ease;
+            }
+
+            &:hover {
+                background-color: v.$indigo;
+
+                i {
+                    color: v.$blanco;
+                }
+            }
+        }
+    }
+
+    &__acceso {
+        margin: 2rem 0;
+    }
+
+    .mas-popular {
+        padding: 1rem;
+        &__titulo {
+            font-weight: bold;
+            font-size: 2.5rem;
+            margin: 1rem 0;
+        }
+
+        &__cursos {
+            @include m.tablet {
+                @include m.grid(3, 2rem);
+            }
+        }
+
+        &__curso {
+            position: relative;
+            @include m.grid(1, 1rem);
+            transition: transform 0.3s ease-out;
+            min-height: 20rem;
+            overflow: hidden;
+
+            @include m.telefono {
+                @include m.grid(1, 1rem);
+            }
+
+            @include m.desktop {
+                @include m.grid(2, 1rem);
+            }
+
+            &:hover {
+                transform: scale(1.03);
+            }
+
+            &-imagen {
+                img {
+                    width: 100%;
+                    height: 20rem;
+                    object-fit: cover;
+                }
+            }
+
+            &-info {
+                padding: 1rem;
+
+                @include m.tablet {
+                    padding: 0;
+                }
+            }
+
+            &-nombre {
+                font-size: 1.4rem;
+                font-weight: bold;
+                color: v.$indigo;
+            }
+
+            &-instructor {
+                font-size: 1.4rem;
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            &-duracion {
+                font-size: 1.4rem;
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            &-fechas {
+                font-size: 1.4rem;
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            &-calificacion {
+                font-size: 1.4rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .para-aprender {
+        padding: 1rem;
+        &__titulo {
+            font-weight: bold;
+            color: #1f1f1f;
+            font-size: 2.5rem;
+            margin: 1rem 0;
+        }
+
+        &__cursos {
+            @include m.grid(1, 3rem);
+            align-items: center;
+            justify-content: center;
+
+            @include m.telefono {
+                @include m.grid(2, 2rem);
+            }
+            @include m.tablet {
+                @include m.grid(4, 2rem);
+            }
+            @include m.desktop {
+                @include m.grid(5, 2rem);
+            }
+        }
+
+        &__curso {
+            min-height: 300px;
+            justify-content: center;
+            gap: 1rem;
+            transition: transform 0.3s ease-out;
+
+            &:hover {
+                transform: scale(1.03);
+            }
+
+            &-imagen {
+                img {
+                    width: 100%;
+                    height: 200px;
+
+                    @include m.tablet {
+                        height: 150px;
+                    }
+                    object-fit: cover;
+                }
+            }
+
+            &-info {
+                padding: 0.2rem;
+            }
+
+            &-nombre {
+                font-size: 1.4rem;
+                font-weight: bold;
+                color: v.$indigo;
+            }
+
+            &-instructor {
+                font-size: 1.4rem;
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            &-duracion {
+                font-size: 1.4rem;
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            &-fechas {
+                font-size: 1.4rem;
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            &-certificacion {
+                font-size: 1.4rem;
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            &-calificacion {
+                font-size: 1.4rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &__seccion-estadisticas {
+    }
+
+    &__lista-cursos {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__curso {
+        padding: 1rem;
+        border: 0.1rem solid v.$indigo;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02);
+            background-color: v.$indigo;
+
+            .dashboard__nombre-curso {
+                color: v.$blanco;
+            }
+
+            .dashboard__descripcion {
+                color: v.$blanco;
+            }
+
+            .dashboard__inscritos {
+                color: v.$blanco;
+
+                span {
+                    color: v.$blanco;
+                    font-weight: 900;
+                    font-size: 2.2rem;
+                }
+            }
+        }
+    }
+
+    &__nombre-curso {
+        font-weight: bold;
+    }
+
+    &__descripcion {
+        font-size: 1.4rem;
+    }
+
+    &__inscritos {
+        font-size: 1.4rem;
+        font-weight: bold;
+
+        span {
+            color: v.$indigo;
+            font-weight: 900;
+            font-size: 2.2rem;
+        }
+    }
+
+    &__subtitulo {
+        font-weight: bold;
+        font-size: 2.5rem;
+        margin: 1rem 0;
+    }
+
+    &__seccion-tareas {
+    }
+
+    &__lista-tareas {
+        @include m.grid(2, 2rem);
+    }
+
+    &__imagen-tarea {
+        img {
+            width: 5rem;
+            height: 5rem;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+    }
+
+    &__tarea {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__nombre-tarea {
+        font-weight: bold;
+        font-size: 1.4rem;
+        color: v.$indigo;
+    }
+}

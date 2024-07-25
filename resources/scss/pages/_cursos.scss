@@ -1,0 +1,190 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.curso {
+    margin: 2rem auto;
+
+    @include m.grid(1, 1rem);
+
+    @include m.tablet {
+        @include m.grid(2, 2rem);
+    }
+    @include m.desktop {
+        display: flex;
+    }
+
+    &__izquierda {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex: 2;
+        @include m.tablet {
+            border-right: 0.1px solid v.$gris;
+            padding: 2px;
+        }
+
+        @include m.desktop {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+    }
+
+    &__contenido {
+        flex: 1;
+    }
+
+    &__titulo {
+        font-size: 2.5rem;
+        line-height: 1;
+        color: v.$indigo;
+        font-weight: bold;
+    }
+
+    &__descripcion {
+    }
+
+    &__calificacion {
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    &__subtitulo {
+        font-size: 2.5rem;
+        color: #1f1f1f;
+        font-weight: bold;
+    }
+
+    &__no-lecciones {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: v.$indigo;
+    }
+
+    &__docente{
+        text-transform: capitalize;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 0 40px 0 10px;
+    }
+
+    &__volver {
+        @include m.boton(v.$indigo, v.$blanco);
+        margin: 2rem 0;
+    }
+
+    &__categoria {
+        font-size: 10px;
+
+
+        span {
+            letter-spacing: 1px;
+            color: v.$blanco;
+            padding: 4px;
+            background-color: rgba(indigo, 70%);
+        }
+    }
+
+    &__lecciones {
+        &-lista {
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-titulo {
+            a {
+                text-transform: capitalize;
+                color: v.$indigo;
+                transition: all 0.3s ease-in;
+            }
+        }
+    }
+}
+
+.docente__no {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    &-btn {
+        @include m.boton(v.$indigo, v.$blanco);
+    }
+
+    &-cursos {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+}
+
+.curso__agregar-leccion {
+    font-size: 1.6rem;
+    color: v.$blanco;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in;
+
+    &:hover {
+        transform: translateY(-0.4rem);
+    }
+}
+
+.curso__subtitulo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    p {
+        font-size: 2.2rem;
+        font-weight: bold;
+    }
+}
+
+.curso__valoraciones {
+    @include m.grid(1, 1rem);
+    padding: 1rem;
+
+    @include m.telefono {
+        @include m.grid(2, 1rem);
+    }
+
+    @include m.tablet {
+        @include m.grid(3, 1rem);
+    }
+
+    @include m.desktop {
+        @include m.grid(4, 1rem);
+    }
+}
+
+.curso__valoracion {
+    padding: 1rem;
+    position: relative;
+}
+
+.curso__imagen {
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.curso__valoracion-info {
+    display: flex;
+    gap: 1rem;
+
+    img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 0.4rem;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+}

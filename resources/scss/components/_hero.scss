@@ -1,0 +1,64 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+
+    &__content {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 1rem;
+        backdrop-filter: blur(.2rem);
+        background-color: rgba(255, 255, 255,.8);
+    }
+
+    &__subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+
+        &-texto {
+            border-radius: 10rem;
+            width: fit-content;
+            padding: 0.5rem 1rem;
+            margin: 0 auto;
+        }
+
+        .hero__link {
+            color: v.$indigo;
+            text-decoration: none;
+
+            .hero__arrow {
+                margin-left: 5px;
+            }
+        }
+    }
+
+    &__text {
+        margin-bottom: 40px;
+
+        .hero__title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #1f1f1f;
+        }
+
+        .hero__description {
+            margin-bottom: 20px;
+        }
+
+        .hero__buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+
+            .hero__button {
+                @include m.boton(v.$indigo, v.$blanco);
+            }
+        }
+    }
+}
